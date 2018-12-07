@@ -6,7 +6,7 @@ pipeline {
 	    }
 	}
 	stages {
-		stage "test" {
+		stage ("test") {
 			step{
 			sh 'echo testing && touch test.txt'
 			}
