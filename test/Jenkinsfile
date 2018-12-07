@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage("test") {
 			steps {
-			sh 'echo testing && touch test.txt'
+			sh 'cd /home/chenshaohua/test && echo testing && touch test.txt'
 			}
 		}
 	}
