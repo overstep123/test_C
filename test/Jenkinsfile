@@ -2,15 +2,12 @@ pipeline {
 	agent {
 	    docker {
 		image 'ubuntu:latest'
-		label 'mydocker'
-		args  '-it'
 	    }
 	}
 	stages {
 		stage("test") {
-			label 'mydocker'
 			steps {
-			sh 'cd /home/chenshaohua/ && echo testing && touch test.txt'
+			sh 'echo testing && touch test.txt'
 			}
 		}
 	}
