@@ -4,9 +4,6 @@ pipeline {
 		image 'ubuntu:latest'
 		args  '-it'
 	    }
-		steps {
-			sh 'touch test.txt'
-		}
 	}
 	stages {
 		stage("test") {
