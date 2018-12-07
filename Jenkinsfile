@@ -14,8 +14,7 @@ submoduleCfg: [], userRemoteConfigs: [[credentialsId:
         stage('Build') {
             steps {
                 echo 'Building'
-                sh 'cd /root/.jenkins/workspace/test3/ && gcc main.c -o 
-main' 
+                sh 'cd /root/.jenkins/workspace/test3/ && gcc main.c -o main' 
             }
         }
         stage('Test') {
@@ -27,8 +26,7 @@ main'
         stage('Deploy') {
             steps {
                 echo 'Deploying'
-                sh 'cd /root/.jenkins/workspace/test3/ && scp -o port=23 
-main 192.168.211.1:/root'  
+                sh 'cd /root/.jenkins/workspace/test3/ && scp -o port=23 main 192.168.211.1:/root'  
             }
         }
  agent { docker { image 'maven:3.3.3' } }
