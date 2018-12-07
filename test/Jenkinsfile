@@ -1,14 +1,12 @@
 pipeline {
-	agent {
-	    docker {
-		image 'ubuntu:latest'
-	    }
-	}
-	stages {
-		stage("test") {
-			steps {
-			sh 'echo testing && touch test.txt'
-			}
-		}
-	}
-}	
+    agent {
+        docker { image 'ubuntu:latest' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'touch test.txt'
+            }
+        }
+    }
+}
