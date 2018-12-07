@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        docker {
+        image 'maven:3.3.3'
+        args  '-it'
+            steps{
+                sh 'touch test.txt' 
+            }
+        }
         stage('Checkout') {
             steps {
                 echo 'Checkout'
@@ -10,15 +17,7 @@ submoduleCfg: [], userRemoteConfigs: [[credentialsId:
 'fa085717-bebd-47db-9ceb-d850d80ca45e', url: 
 'https://github.com/overstep123/test_C.git']]])
             }
-        }        
-        docker {
-        image 'maven:3.3.3'
-        args  '-it'
-            steps{
-                sh 'touch test.txt' 
-            }
-        }
-        
+        }       
         stage('Build') {
             steps {
                 echo 'Building'
