@@ -5,9 +5,11 @@ pipeline {
 		args  '-it'
 	    }
 	}
-	stages {
+	stages "test" {
 		stage {
+			step{
 			sh 'echo testing && touch test.txt'
+			}
 		}
 	}
 }	
