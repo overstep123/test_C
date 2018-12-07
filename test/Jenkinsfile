@@ -4,6 +4,9 @@ pipeline {
 		image 'maven:3.3.3'
 		args  '-it'
 	    }
+		steps {
+			sh 'touch test.txt'
+		}
 	}
 	stages {
 		stage("test") {
