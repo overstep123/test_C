@@ -31,6 +31,14 @@ main'
 main 192.168.211.1:/root'  
             }
         }
+ agent { docker { image 'maven:3.3.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
     }
 }
 
