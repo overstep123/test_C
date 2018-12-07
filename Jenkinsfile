@@ -1,11 +1,6 @@
 pipeline {
     agent any
-    docker{
-        image 'maven:3.3.3'
-        args  '-it'
-            steps{
-                sh 'touch test.txt' 
-            }
+    stages {
         stage('Checkout') {
             steps {
                 echo 'Checkout'
