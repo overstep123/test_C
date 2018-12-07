@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'touch test.txt'
+                sh 'cd /home/ && touch test.txt'
             }
         }
     }
