@@ -1,5 +1,6 @@
 pipeline {
-agent stages {
+agent any
+stages {
     docker {
         image 'maven:3.3.3'
         args  '-it'
